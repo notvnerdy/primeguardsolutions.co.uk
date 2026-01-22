@@ -104,38 +104,67 @@ if (contactForm) {
             isValid = false;
         }
         
-        // If form is valid, show success message
+        // If form is valid, submit via Formspree
         if (isValid) {
-            // Compile form data
-            const formData = {
-                fullName: fullName.value,
-                email: email.value,
-                phone: phone.value || 'Not provided',
-                company: document.getElementById('company').value || 'Not provided',
-                service: service.value,
-                message: message.value,
-                submittedAt: new Date().toISOString()
-            };
+            // Show loading state
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
             
-            // Log to console for development
-            console.log('Form Data:', formData);
+            // Prepare form data
+            const formData = new FormData();
+            formData.append('fullName', fullName.value);
+            formData.append('email', email.value);
+            formData.append('phone', phone.value || 'Not provided');
+            formData.append('company', document.getElementById('company').value || 'Not provided');
+            formData.append('service', service.value);
+            formData.append('message', message.value);
+            formData.append('_subject', 'New Security Enquiry from Prime Guard Solutions');
             
-            // Show success message
-            formMessage.classList.remove('error');
-            formMessage.classList.add('success');
-            formMessage.textContent = 'Thank you for your message! We will respond to your enquiry as soon as possible.';
-            formMessage.style.display = 'block';
-            
-            // Reset form
-            contactForm.reset();
-            
-            // Scroll to message
-            formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            
-            // Remove success message after 8 seconds
-            setTimeout(function() {
-                formMessage.style.display = 'none';
-            }, 8000);
+            // Submit to Formspree (replace with your Formspree endpoint)
+            fetch('https://formspree.io/f/YOUR_FORM_ID', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Show success message
+                    formMessage.classList.remove('error');
+                    formMessage.classList.add('success');
+                    formMessage.textContent = 'Thank you for your message! We will respond to your enquiry within 15 minutes during business hours.';
+                    formMessage.style.display = 'block';
+                    
+                    // Reset form
+                    contactForm.reset();
+                    
+                    // Scroll to message
+                    formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Remove success message after 10 seconds
+                    setTimeout(function() {
+                        formMessage.style.display = 'none';
+                    }, 10000);
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                // Show error message
+                formMessage.classList.remove('success');
+                formMessage.classList.add('error');
+                formMessage.textContent = 'Sorry, there was an error sending your message. Please call us at +44 7853 580555 or email info@primeguardsolutions.co.uk';
+                formMessage.style.display = 'block';
+                console.error('Form submission error:', error);
+            })
+            .finally(() => {
+                // Restore button state
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+            });
         }
     });
 }
@@ -227,6 +256,83 @@ window.addEventListener('load', function() {
     // Page fully loaded
     document.body.classList.add('loaded');
 });
+
+// ========================================
+// PARALLAX EFFECT ON HERO
+// ========================================
+if (window.matchMedia('(min-width: 768px)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let ticking = false;
+    
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+                const hero = document.querySelector('.hero');
+                if (hero) {
+                    const scrolled = window.pageYOffset;
+                    const limit = hero.offsetHeight;
+                    
+                    if (scrolled <= limit) {
+                        // Parallax effect via CSS custom property
+                        hero.style.setProperty('--parallax-offset', scrolled * 0.5 + 'px');
+                    }
+                }
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+}
+
+// ========================================
+// INLINE FORM VALIDATION
+// ========================================
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+
+    const validatableInputs = form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], textarea, select');
+    
+    validatableInputs.forEach(input => {
+        input.addEventListener('blur', function() {
+            validateInput(this);
+        });
+        
+        input.addEventListener('input', function() {
+            if (this.classList.contains('valid') || this.classList.contains('invalid')) {
+                validateInput(this);
+            }
+        });
+    });
+});
+
+function validateInput(input) {
+    const value = input.value.trim();
+    
+    if (!input.hasAttribute('required') && !value) {
+        input.classList.remove('valid', 'invalid');
+        return;
+    }
+    
+    let isValid = false;
+    
+    if (input.type === 'email') {
+        isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    } else if (input.type === 'tel') {
+        isValid = /^[0-9\s\-\+\(\)]+$/.test(value) && value.length >= 10;
+    } else if (input.tagName === 'SELECT') {
+        isValid = value !== '';
+    } else {
+        isValid = value.length > 0;
+    }
+    
+    if (isValid) {
+        input.classList.remove('invalid');
+        input.classList.add('valid');
+    } else if (value) {
+        input.classList.remove('valid');
+        input.classList.add('invalid');
+    }
+}
 // Enhanced form validation with visual feedback
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contactForm');
