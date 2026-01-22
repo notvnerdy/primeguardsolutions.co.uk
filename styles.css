@@ -388,6 +388,14 @@ header,
      font-weight: 800;
  }
 
+.trust-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.2rem;
+    justify-content: center;
+}
+
 .trust-chips .chip {
     padding: 0.55rem 0.9rem;
     border-radius: 12px;
