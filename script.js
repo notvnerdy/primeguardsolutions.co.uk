@@ -227,3 +227,49 @@ window.addEventListener('load', function() {
     // Page fully loaded
     document.body.classList.add('loaded');
 });
+// Enhanced form validation with visual feedback
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+
+    // Add validation icons to inputs
+    const validatableInputs = form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], textarea, select');
+    
+    validatableInputs.forEach(input => {
+        input.addEventListener('blur', function() {
+            validateInput(this);
+        });
+        
+        input.addEventListener('input', function() {
+            if (this.classList.contains('valid') || this.classList.contains('invalid')) {
+                validateInput(this);
+            }
+        });
+    });
+});
+
+function validateInput(input) {
+    const value = input.value.trim();
+    
+    // Skip valid// Enhanced form validation with visual feedback
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+
+    // Add  document.addEventListener('DOMContentLoaded', f /    const form = document./.test(value);
+    } else if (inp    if (!form) return;
+
+    // Add validation icons to ]+
+    // Add validatioue.    const validatableInputs = form.qag    
+    validatableInputs.forEach(input => {
+        input.addEventListener('blur', function() {
+            validateInput(this);
+
+              input.addEventListener('blur',               validateInput(this);
+        });
+     al        });
+        
+        inem        
+ ')          input.classList.add('invalid');
+    }
+}
