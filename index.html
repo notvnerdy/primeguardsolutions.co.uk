@@ -3,31 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Prime Guard Solutions - Professional security services providing comprehensive protection for your business and residential needs.">
-    <meta name="keywords" content="security services, security solutions, protection services, security company">
+    <meta name="description" content="Prime Guard Solutions - Professional SIA-licensed security services across the UK. Man guarding, event security, access control, and corporate protection.">
+    <meta name="keywords" content="SIA security, security guards UK, event security, access control, commercial security, site security">
     <meta name="author" content="Prime Guard Solutions">
-    <meta property="og:title" content="Prime Guard Solutions - Professional Security Services">
-    <meta property="og:description" content="Comprehensive security solutions for your peace of mind">
+    <meta property="og:title" content="Prime Guard Solutions - SIA-Licensed Security Services UK">
+    <meta property="og:description" content="Professional, compliant security services with SIA-licensed personnel across the United Kingdom.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://primeguardsolutions.co.uk">
-    <title>Prime Guard Solutions - Professional Security Services</title>
+    <title>Prime Guard Solutions - Professional SIA-Licensed Security Services UK</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
+    <header class="header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
             <div class="container">
                 <div class="logo">
-                    <h1>Prime Guard Solutions</h1>
+                    <a href="index.html">
+                        <h1>Prime Guard Solutions</h1>
+                    </a>
                 </div>
                 <ul class="nav-menu" id="nav-menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="accessories.html">Accessories</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
-                <div class="hamburger" id="hamburger">
+                <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -36,159 +40,192 @@
         </nav>
     </header>
 
-    <main>
-        <section id="home" class="hero">
+    <main role="main">
+        <!-- Hero Section -->
+        <section class="hero" aria-label="Hero section">
             <div class="container">
                 <div class="hero-content">
-                    <h2>Your Security, Our Priority</h2>
-                    <p>Professional security solutions tailored to protect what matters most to you.</p>
-                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                    <h1>Professional SIA-Licensed Security Services Across the UK</h1>
+                    <p>Reliable, compliant security solutions tailored to protect your business and people.</p>
+                    <div class="hero-buttons">
+                        <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+                        <a href="services.html" class="btn btn-secondary">View Services</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="services" class="services">
+        <!-- Services Overview -->
+        <section class="services-overview" aria-labelledby="services-heading">
             <div class="container">
-                <h2 class="section-title">Our Services</h2>
+                <h2 id="services-heading" class="section-title">Our Security Services</h2>
                 <div class="services-grid">
                     <div class="service-card">
-                        <div class="service-icon">🛡️</div>
-                        <h3>Commercial Security</h3>
-                        <p>Comprehensive security solutions for businesses of all sizes, including 24/7 monitoring and rapid response teams.</p>
+                        <div class="service-icon">👨‍💼</div>
+                        <h3>Man Guarding</h3>
+                        <p>SIA-licensed security officers providing professional on-site protection for your premises and personnel.</p>
+                        <a href="services.html#man-guarding" class="service-link">Learn More →</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🎪</div>
+                        <h3>Event Security</h3>
+                        <p>Industry-trained security personnel for crowd management and protection at corporate events and public gatherings.</p>
+                        <a href="services.html#event-security" class="service-link">Learn More →</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🚪</div>
+                        <h3>Access Control</h3>
+                        <p>Professional gate and access control services ensuring secure entry management for your facility.</p>
+                        <a href="services.html#access-control" class="service-link">Learn More →</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🏢</div>
+                        <h3>Corporate Security</h3>
+                        <p>Tailored security solutions for corporate offices, compliant with UK regulations and industry standards.</p>
+                        <a href="services.html#corporate-security" class="service-link">Learn More →</a>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">🏠</div>
                         <h3>Residential Security</h3>
-                        <p>Protect your home and family with our advanced security systems and professional monitoring services.</p>
+                        <p>Professional residential and concierge security services for apartment buildings and gated properties.</p>
+                        <a href="services.html#residential-security" class="service-link">Learn More →</a>
                     </div>
                     <div class="service-card">
-                        <div class="service-icon">📹</div>
-                        <h3>CCTV Systems</h3>
-                        <p>State-of-the-art surveillance systems with remote access and intelligent motion detection capabilities.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">🚨</div>
-                        <h3>Alarm Systems</h3>
-                        <p>Advanced alarm systems with instant alerts and professional monitoring for complete peace of mind.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">👥</div>
-                        <h3>Security Personnel</h3>
-                        <p>Highly trained security professionals available for events, construction sites, and ongoing protection.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">🔒</div>
-                        <h3>Access Control</h3>
-                        <p>Modern access control systems to manage and monitor entry points with keycard and biometric options.</p>
+                        <div class="service-icon">🏗️</div>
+                        <h3>Construction Security</h3>
+                        <p>Site security and asset protection for construction projects, including perimeter monitoring and access control.</p>
+                        <a href="services.html#construction-security" class="service-link">Learn More →</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="about">
+        <!-- Why Choose Us -->
+        <section class="why-choose-us" aria-labelledby="why-heading">
             <div class="container">
-                <h2 class="section-title">About Prime Guard Solutions</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>With over a decade of experience in the security industry, Prime Guard Solutions has established itself as a trusted name in comprehensive security services across the United Kingdom.</p>
-                        <p>Our team of certified professionals is dedicated to providing cutting-edge security solutions that combine advanced technology with personalized service. We understand that every client has unique security needs, and we pride ourselves on delivering customized solutions that exceed expectations.</p>
-                        <p>Our commitment to excellence, rapid response times, and 24/7 availability ensures that your property and people are always protected.</p>
+                <h2 id="why-heading" class="section-title">Why Choose Prime Guard Solutions</h2>
+                <div class="reasons-grid">
+                    <div class="reason-card">
+                        <h3>SIA-Licensed Personnel</h3>
+                        <p>All our security officers hold valid Security Industry Authority (SIA) licences, meeting UK regulatory requirements.</p>
                     </div>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <h3>10+</h3>
-                            <p>Years Experience</p>
-                        </div>
-                        <div class="stat">
-                            <h3>500+</h3>
-                            <p>Satisfied Clients</p>
-                        </div>
-                        <div class="stat">
-                            <h3>24/7</h3>
-                            <p>Monitoring</p>
-                        </div>
+                    <div class="reason-card">
+                        <h3>Professional Standards</h3>
+                        <p>We maintain the highest standards of professional conduct, appearance, and industry training.</p>
+                    </div>
+                    <div class="reason-card">
+                        <h3>UK-Focused Operations</h3>
+                        <p>Operating exclusively across the United Kingdom with deep understanding of local compliance requirements.</p>
+                    </div>
+                    <div class="reason-card">
+                        <h3>Flexible Solutions</h3>
+                        <p>Tailored security services designed to meet the specific requirements of your business or venue.</p>
+                    </div>
+                    <div class="reason-card">
+                        <h3>Regulatory Compliance</h3>
+                        <p>Full compliance with UK security regulations, GDPR data protection, and industry best practices.</p>
+                    </div>
+                    <div class="reason-card">
+                        <h3>Client-Focused Service</h3>
+                        <p>Dedicated support and responsive communication to understand and exceed your security requirements.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="contact">
+        <!-- Industries We Serve -->
+        <section class="industries-preview" aria-labelledby="industries-heading">
             <div class="container">
-                <h2 class="section-title">Contact Us</h2>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <h3>Get in Touch</h3>
-                        <p>Ready to enhance your security? Contact us today for a free consultation and quote.</p>
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <strong>Phone:</strong>
-                                <p>+44 (0) 20 1234 5678</p>
-                            </div>
-                            <div class="contact-item">
-                                <strong>Email:</strong>
-                                <p>info@primeguardsolutions.co.uk</p>
-                            </div>
-                            <div class="contact-item">
-                                <strong>Hours:</strong>
-                                <p>24/7 Emergency Response<br>Office: Mon-Fri 9:00-18:00</p>
-                            </div>
-                        </div>
+                <h2 id="industries-heading" class="section-title">Industries We Serve</h2>
+                <div class="industries-grid">
+                    <div class="industry-item">
+                        <h3>Corporate Offices</h3>
+                        <p>Professional security for executive offices and corporate headquarters</p>
                     </div>
-                    <div class="contact-form">
-                        <form id="contactForm">
-                            <div class="form-group">
-                                <label for="name">Name *</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone</label>
-                                <input type="tel" id="phone" name="phone">
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message *</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Send Message</button>
-                        </form>
+                    <div class="industry-item">
+                        <h3>Retail & Shopping Centres</h3>
+                        <p>Asset protection and customer safety for retail environments</p>
+                    </div>
+                    <div class="industry-item">
+                        <h3>Events & Venues</h3>
+                        <p>Crowd management and safety at conferences, venues, and public events</p>
+                    </div>
+                    <div class="industry-item">
+                        <h3>Construction Sites</h3>
+                        <p>Asset protection and perimeter security for construction projects</p>
+                    </div>
+                    <div class="industry-item">
+                        <h3>Residential Properties</h3>
+                        <p>Security and concierge services for residential buildings and gated communities</p>
+                    </div>
+                    <div class="industry-item">
+                        <h3>Warehouses & Logistics</h3>
+                        <p>Comprehensive security for warehouse facilities and logistics operations</p>
                     </div>
                 </div>
+                <div class="industries-cta">
+                    <a href="industries.html" class="btn btn-primary">Explore All Industries</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compliance & Standards -->
+        <section class="compliance" aria-labelledby="compliance-heading">
+            <div class="container">
+                <h2 id="compliance-heading" class="section-title">Compliance & Professional Standards</h2>
+                <div class="compliance-content">
+                    <p>Prime Guard Solutions operates in full compliance with UK security regulations and industry standards. Our security personnel are SIA-licensed professionals trained in industry best practices and regulatory requirements.</p>
+                    <p>We do not make exaggerated claims or unverified guarantees. Instead, we offer honest, professional security services designed to reduce risk and protect your assets through compliant, trained personnel and tailored solutions.</p>
+                    <p>All our operations adhere to GDPR data protection requirements and UK business standards, ensuring your data and privacy are handled responsibly.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" aria-labelledby="cta-heading">
+            <div class="container">
+                <h2 id="cta-heading">Ready to Discuss Your Security Needs?</h2>
+                <p>Contact our team today for a professional consultation and tailored quote.</p>
+                <a href="contact.html" class="btn btn-primary-light">Get in Touch</a>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Prime Guard Solutions</h3>
-                    <p>Professional security services you can trust.</p>
+                    <p>Professional SIA-licensed security services across the United Kingdom.</p>
+                    <p><strong>Email:</strong> info@creditvana.com</p>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="industries.html">Industries</a></li>
+                        <li><a href="accessories.html">Accessories</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Legal</h3>
                     <ul>
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-conditions.html">Terms & Conditions</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Prime Guard Solutions. All rights reserved.</p>
+                <p>&copy; 2026 Prime Guard Solutions. All rights reserved. SIA-licensed security services across the UK.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">↑</button>
 
     <script src="script.js"></script>
 </body>
