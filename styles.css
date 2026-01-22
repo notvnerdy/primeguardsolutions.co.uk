@@ -1591,6 +1591,41 @@ header,
 }
 
 @media (max-width: 768px) {
+    .top-ribbon__content {
+        align-items: flex-start;
+        gap: 0.35rem;
+    }
+
+    .top-ribbon__left,
+    .top-ribbon__right {
+        gap: 0.4rem;
+    }
+
+    .top-ribbon .pill {
+        padding: 0.2rem 0.55rem;
+        font-size: 0.82rem;
+    }
+
+    .sector-marquee {
+        padding: 0.65rem 0;
+    }
+
+    .marquee-track {
+        gap: 1.6rem;
+        animation-duration: 22s;
+        font-size: 0.95rem;
+    }
+
+    .hero {
+        padding: 4rem 0 3rem;
+        min-height: 62vh;
+    }
+
+    .hero::before {
+        animation: none;
+        transform: scale(1.02);
+    }
+
     .hero-content h1 {
         font-size: 2.2rem;
     }
@@ -1629,6 +1664,15 @@ header,
         gap: 0.4rem;
     }
 
+    .trust-chips .chip {
+        font-size: 0.88rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
     .marquee-track {
         animation-duration: 22s;
     }
@@ -1639,11 +1683,26 @@ header,
         padding: 3.5rem 0;
     }
     .hero {
-        padding: 4.5rem 0 3rem;
+        padding: 3.6rem 0 2.6rem;
+        min-height: auto;
     }
     .service-card,
     .reason-card {
         padding: 1.6rem;
+    }
+
+    .hero-content::before {
+        font-size: 0.85rem;
+    }
+
+    .trust-chips .chip {
+        width: 100%;
+        text-align: center;
+    }
+
+    .top-ribbon__right {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 
