@@ -255,7 +255,7 @@ header,
     overflow: hidden;
     background: radial-gradient(circle at 15% 20%, rgba(201, 162, 39, 0.15), transparent 30%),
                 radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.08), transparent 32%),
-                linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+                linear-gradient(135deg, rgba(11, 31, 59, 0.95) 0%, rgba(46, 58, 70, 0.9) 100%);
     color: var(--background-white);
     padding: 6.5rem 0 5rem;
     min-height: 72vh;
@@ -267,7 +267,12 @@ header,
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(160deg, rgba(11, 31, 59, 0.15), transparent 50%);
+    background-image: linear-gradient(120deg, rgba(11, 31, 59, 0.8) 0%, rgba(11, 31, 59, 0.4) 35%, rgba(46, 58, 70, 0.65) 100%),
+                      url('https://images.unsplash.com/photo-1530651780647-61f2d32fdc12?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9;
+    filter: saturate(0.9);
 }
 
 .hero::after {
@@ -286,6 +291,8 @@ header,
 
 .hero-content {
     max-width: 720px;
+    animation: fadeIn 1s ease 0.1s forwards;
+    opacity: 0;
 }
 
 .hero-content::before {
@@ -312,6 +319,8 @@ header,
     line-height: 1.12;
     letter-spacing: -1.2px;
     text-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
 }
 
 .hero-content p {
@@ -321,12 +330,16 @@ header,
     font-weight: 300;
     line-height: 1.7;
     max-width: 640px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.35s forwards;
 }
 
 .hero-buttons {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.5s forwards;
 }
 
 /* ===== BUTTONS ===== */
@@ -450,6 +463,8 @@ header,
     text-align: center;
     position: relative;
     overflow: hidden;
+    opacity: 0;
+    animation: fadeUp 0.85s ease forwards;
 }
 
 .service-card::before {
@@ -561,6 +576,8 @@ header,
     position: relative;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    opacity: 0;
+    animation: fadeUp 0.85s ease forwards;
 }
 
 .reason-card::before {
@@ -633,6 +650,8 @@ header,
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 14px rgba(11, 31, 59, 0.1);
+    opacity: 0;
+    animation: fadeUp 0.85s ease forwards;
 }
 
 .industry-item::before {
@@ -1101,11 +1120,55 @@ header,
     box-shadow: 0 14px 36px rgba(201, 162, 39, 0.45);
     padding-left: 2.8rem;
     padding-right: 2.8rem;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.2s forwards;
 }
 
 .cta-section .btn-primary-light:hover {
     transform: translateY(-5px);
 }
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.services-grid .service-card:nth-child(1) { animation-delay: 0.1s; }
+.services-grid .service-card:nth-child(2) { animation-delay: 0.18s; }
+.services-grid .service-card:nth-child(3) { animation-delay: 0.26s; }
+.services-grid .service-card:nth-child(4) { animation-delay: 0.34s; }
+.services-grid .service-card:nth-child(5) { animation-delay: 0.42s; }
+.services-grid .service-card:nth-child(6) { animation-delay: 0.5s; }
+
+.reasons-grid .reason-card:nth-child(1) { animation-delay: 0.12s; }
+.reasons-grid .reason-card:nth-child(2) { animation-delay: 0.2s; }
+.reasons-grid .reason-card:nth-child(3) { animation-delay: 0.28s; }
+.reasons-grid .reason-card:nth-child(4) { animation-delay: 0.36s; }
+.reasons-grid .reason-card:nth-child(5) { animation-delay: 0.44s; }
+.reasons-grid .reason-card:nth-child(6) { animation-delay: 0.52s; }
+
+.industries-grid .industry-item:nth-child(1) { animation-delay: 0.1s; }
+.industries-grid .industry-item:nth-child(2) { animation-delay: 0.18s; }
+.industries-grid .industry-item:nth-child(3) { animation-delay: 0.26s; }
+.industries-grid .industry-item:nth-child(4) { animation-delay: 0.34s; }
+.industries-grid .industry-item:nth-child(5) { animation-delay: 0.42s; }
+.industries-grid .industry-item:nth-child(6) { animation-delay: 0.5s; }
 
 /* ===== CONTENT SECTIONS ===== */
 .content-section {
